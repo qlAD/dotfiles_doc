@@ -6,8 +6,8 @@ export default function Logo() {
     <>
       <Image src="/icons/64.png" alt="onedrive-vercel-index" width="36" height="36" />
       <div className={styles.logo}>
-        <span className={styles.logo__title}>qlAD's Arch Linux dotfiles</span>
-        <span className={styles.logo__subtitle}>qlad's Arch Linux configuration file</span>
+        <span className={styles.logo__title}>qlAD&s Arch Linux dotfiles</span>
+        <span className={styles.logo__subtitle}>qlad&s Arch Linux configuration file</span>
       </div>
     </>
   )
