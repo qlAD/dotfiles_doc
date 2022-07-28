@@ -9,7 +9,7 @@ export default {
   github: 'https://github.com/qlAD/dotfiles',
   projectLink: 'https://github.com/qlAD/dotfiles',
   docsRepositoryBase:
-    'https://github.com/qlAD/Doc/tree/main/src/pages',
+    'https://github.com/qlAD/dotfiles_doc/tree/main/src/pages',
   titleSuffix: ' - qlAD&s Arch Linux dotfiles',
   logo: <Logo />,
   head: (
