@@ -1,0 +1,81 @@
+import Callout from 'nextra-theme-docs/callout'
+import Video from '../../../components/video'
+
+# 受密码保护的文件夹
+
+<Video src="/videos/password-demo.mp4" ratio={1246 / 2246} />
+
+## 使用密码保护你的文件夹
+
+你可以创建一个需要密码才能访问的文件夹。
+
+### 步骤
+
+- 你需要在 `config/site.json` 的 `protectedRoutes` 处添加要保护的文件夹。
+- 在要保护的文件夹下创建一个名为 `.password` 的 **空白文件**。
+- 使用任意文本编辑器打开这个 `.password` 文件，并在里面填写该文件夹的访问密码。
+- 最后，在 Vercel 中重新部署该项目。
+
+### 设置受密码保护的文件夹
+
+受密码保护的文件夹主要由 `config/site.json` 中的 `protectedRoutes` 属性指定，举个例子 👇
+
+假设你有这样一个文件结构：
+
+```
+.
+├── 📕 Books
+│   └── ...
+├── 🌞 Private folder
+│   ├── this-is-public
+│   └── u-need-a-password   <-- 你想要用密码保护这个文件夹
+├── 🍡 Genshin PV
+│   └── ...
+└── README.md
+```
+
+我们想要将 `/u-need-a-password` 设为受密码保护的文件夹，就把它的绝对路径按下列格式填写到 `protectedRoutes` 里：
+
+```json
+"protectedRoutes": [
+  "/🌞 Private folder/u-need-a-password",
+],
+```
+
+如果你想设置另一个受密码保护的文件夹，那就在下一行按下列格式添加它的绝对路径：
+
+```json
+"protectedRoutes": [
+  "/🌞 Private folder/u-need-a-password",
+   "/another/route/for/me/to/protect",
+],
+```
+
+如果你没有任何受密码保护的文件夹，那么就添加一个 `[]` 以关闭此功能：
+
+```json
+"protectedRoutes": [],
+```
+
+在上述添加的受密码保护的路径的根目录下内创建一个 `.password` 文件，该文件内的纯文本内容就是你访问该文件夹时需要的密码。
+
+![What to write inside .password](../_images/features/dot-password-file.png)
+
+### 注意事项
+
+是的，所有看起来安全的保护措施都并非无懈可击。
+
+1. 受密码保护的文件夹中的文件直链可以通过 URL 参数 `&odpt=<hashed_token>` 分享，如果你真的需要的话：
+
+   ```
+   https://drive.swo.moe/api/raw/?path=/🌞%20Private%20folder/u-need-a-password/watch%20this.mp4&odpt=c8ebdc273d673d167c238dd25a997bdf9b4ecbf589452697c1a6cb416b2ed11d
+   ```
+
+   我们并不知道这是否会暴露你的密码，受密码保护的文件，个人信息等等，所以请谨慎使用。
+
+1. 我个人无法保证此保护功能完全安全。所以我不推荐使用此方式存放你的个人隐私信息，这只是个分享的可选项。
+
+<Callout emoji="🗣">
+  详情请参考 [Password protected routes is now supported
+  #66](https://github.com/spencerwooo/onedrive-vercel-index/discussions/66)。
+</Callout>
