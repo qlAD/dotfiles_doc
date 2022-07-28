@@ -1,0 +1,160 @@
+# Arch Linux 第 N 次部署
+
+author: Anonymous
+date: July 24, 2022
+preview: 第 N 次部署美化 Arch Linux，再次进入 Arch 邪教
+published: Yes
+slug: arch_deploy
+tag: Arch 环境配置
+
+![https://s2.loli.net/2022/07/24/FxsJ5rKZNW9LbQE.jpg](https://s2.loli.net/2022/07/24/FxsJ5rKZNW9LbQE.jpg)
+
+参考：
+
+**[Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/?id=arch-linux-%e5%ae%89%e8%a3%85%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b-archtutorial-arch-linux-studio)**
+
+## 安装后的样子预览
+
+### 几张安装美化后的截图如下
+
+![https://s2.loli.net/2022/07/24/BKQoT3bcJyqZpmr.png](https://s2.loli.net/2022/07/24/BKQoT3bcJyqZpmr.png)
+
+![https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png](https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png)
+
+### 基本环境：
+
+Arch Linux ([https://archlinux.org/](https://archlinux.org/))
+
+Bspwm (直接附上配置文件 [https://github.com/qlAD/.config/tree/main/bspwm](https://github.com/qlAD/.config/tree/main/bspwm))
+
+Ly (官方仓库 [https://github.com/fairyglade/ly](https://github.com/fairyglade/ly))
+
+Nvim (使用 TheCW 的配置 [https://github.com/theniceboy/nvim](https://github.com/theniceboy/nvim))
+
+Virt-manager (使用 B站 教程 [https://www.bilibili.com/video/BV1dQ4y1o78R](https://www.bilibili.com/video/BV1dQ4y1o78R?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=0cd38c556b88d8d48ee0aff1818378ea))
+
+## 1、安装 Arch Linux
+
+### 1.1、参考
+
+[Arch Linux Wiki Installation guide](https://wiki.archlinux.org/title/Installation_guide)
+
+[超详细教程 Arch Linux 真机安装教程 - 从命令行到图形界面 | 2021年3月](https://www.bilibili.com/video/BV1Av411a7xe)
+
+### 1.2、使用 Bspwm 作为 窗口管理器
+
+[GitHub - baskerville/bspwm: A tiling window manager based on binary space partitioning](https://github.com/baskerville/bspwm)
+
+• 它_只是_一个窗口管理器（WM）。
+• 它由几个易于配置的脚本管理。
+• 它默认支持窗口之间的间隙。
+
+### 1.3、使用 sxhkd 进行快捷键设置
+
+[GitHub - baskerville/sxhkd: Simple X hotkey daemon](https://github.com/baskerville/sxhkd)
+
+sxhkd 是一个 X 守护进程，它通过执行命令对输入事件做出反应。
+
+它的配置文件是一系列绑定，定义了输入事件和命令之间的关联
+
+配置文件的格式支持将多个快捷方式并行映射到多个命令的简单表示法。
+
+### 1.4、使用 Ly 作为登录管理器
+
+[GitHub - fairyglade/ly: display manager with console UI](https://github.com/fairyglade/ly)
+
+Ly - TUI 显示管理器
+
+![https://s2.loli.net/2022/07/24/CgLTS7mFrWBzi86.png](https://s2.loli.net/2022/07/24/CgLTS7mFrWBzi86.png)
+
+Arch Linux Installation From [AUR](https://aur.archlinux.org/packages/ly):
+
+`yay -S ly`
+
+## 2、字体的安装
+
+下载字体移动到 .fonts 文件夹下，没有就创建
+
+![https://s2.loli.net/2022/07/24/Ubi5SIgDlfnXNhq.png](https://s2.loli.net/2022/07/24/Ubi5SIgDlfnXNhq.png)
+
+（可选）安装和我相同的字体
+
+![https://s2.loli.net/2022/07/24/14K3gSbaQe6c8NP.png](https://s2.loli.net/2022/07/24/14K3gSbaQe6c8NP.png)
+
+## 3、Polybar 美化配置
+
+根据原仓库稍作改动（[https://github.com/the-anonymous-raven/polybar-themes](https://github.com/the-anonymous-raven/polybar-themes)）
+
+改动前（左）、改动后（右）
+
+![https://s2.loli.net/2022/07/24/lEy8Hpn5jXTBkKz.png](https://s2.loli.net/2022/07/24/lEy8Hpn5jXTBkKz.png)
+
+![https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png](https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png)
+
+其中加入了 cava 随声音波动插件脚本
+
+[polybar-scripts/polybar-scripts/info-cava at master · polybar/polybar-scripts](https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/info-cava)
+
+![https://s2.loli.net/2022/07/24/PwYDnZTMhv9bC3H.png](https://s2.loli.net/2022/07/24/PwYDnZTMhv9bC3H.png)
+
+注意需要安装 cava-git 应用程序（cava 需要内核支持，并有些许 bug）
+
+![https://s2.loli.net/2022/07/24/fSb6YDavj4ed2Rh.png](https://s2.loli.net/2022/07/24/fSb6YDavj4ed2Rh.png)
+
+## 4、主题和图标
+
+![https://s2.loli.net/2022/07/24/lfFQVTAy7ecHjg9.png](https://s2.loli.net/2022/07/24/lfFQVTAy7ecHjg9.png)
+
+### 4.1、系统主题：Nordic-darker（[https://github.com/EliverLara/Nordic](https://github.com/EliverLara/Nordic)）
+
+### 4.2、系统图标：Papirus-Dark（[https://github.com/PapirusDevelopmentTeam/papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)）
+
+使用 lxappearance 程序切换主题和图标
+
+![https://s2.loli.net/2022/07/24/bOEKUscrM1oRgp5.png](https://s2.loli.net/2022/07/24/bOEKUscrM1oRgp5.png)
+
+### 4.3、壁纸（使用 FEH 设置）
+
+![https://s2.loli.net/2022/07/24/BCRVnLIHq5bXd6x.png](https://s2.loli.net/2022/07/24/BCRVnLIHq5bXd6x.png)
+
+[GitHub - derf/feh: a fast and light image viewer](https://github.com/derf/feh)
+
+feh 是一个轻量级、可配置和多功能的图像查看器。 它面向命令行用户，但也可以从图形文件管理器启动。 除了查看图像，它还可以编译文本和缩略图列表、显示（不可）加载文件、设置 X11 背景等等。
+
+可以在 Github 上找到 Nord 主题的壁纸
+
+[GitHub - linuxdotexe/nordic-wallpapers: A collection of wallpapers that go well with the rices inspired by the Nord Colorscheme. Made with ImageGoNord by Schrödinger Hat.](https://github.com/linuxdotexe/nordic-wallpapers)
+
+### 4.4、Grub 主题
+
+![https://s2.loli.net/2022/07/24/fWxZyo4GzBlmgKQ.png](https://s2.loli.net/2022/07/24/fWxZyo4GzBlmgKQ.png)
+
+[GitHub - VandalByte/dedsec-grub2-theme: DedSec GRUB2 Theme 💀🖤](https://github.com/VandalByte/dedsec-grub2-theme)
+
+来自于 Github （一个方便的 Grub 设置程序）
+
+我选择的是这一款
+
+![https://s2.loli.net/2022/07/24/TiCUvBpGMQR27Vm.png](https://s2.loli.net/2022/07/24/TiCUvBpGMQR27Vm.png)
+
+## 5、工具和软件
+
+网络代理工具 **[clash_for_windows_pkg](https://github.com/Fndroid/clash_for_windows_pkg) （yay 可直接安装中文版）**
+
+![https://s2.loli.net/2022/07/24/dFeIVRBZuiMajG8.png](https://s2.loli.net/2022/07/24/dFeIVRBZuiMajG8.png)
+
+网络音乐软件 [**Electron Netease Cloud Music**](https://github.com/Rocket1184/electron-netease-cloud-music)
+
+浏览器 Firefox + Google-Chrome-Dev
+
+文件管理器 Ranger + Dolphin
+
+Terminal Alacritty + kitty + fish
+
+通讯 Telegram-Desktop
+
+游戏 Steam + Minecraft
+
+办公 LibreOffice + Vscode + Nvim
+
+## 持续更新中。。。
