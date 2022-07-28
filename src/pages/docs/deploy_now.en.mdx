@@ -1,0 +1,160 @@
+# Arch Linux Nth Deployment
+
+author: Anonymous
+date: July 24, 2022
+preview: The Nth deployment beautifies Arch Linux and enters the Arch cult again
+published: Yes
+slug: arch_deploy
+tag: Arch environment configuration
+
+![https://s2.loli.net/2022/07/24/FxsJ5rKZNW9LbQE.jpg](https://s2.loli.net/2022/07/24/FxsJ5rKZNW9LbQE.jpg)
+
+refer to:
+
+**[Arch Linux Installation Tutorial - ArchTutorial - Arch Linux Studio](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/?id=arch-linux-%e5%ae%89%e8%a3%85% e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b-archtutorial-arch-linux-studio)**
+
+## Preview of what it will look like after installation
+
+### Several screenshots after installation and beautification are as follows
+
+![https://s2.loli.net/2022/07/24/BKQoT3bcJyqZpmr.png](https://s2.loli.net/2022/07/24/BKQoT3bcJyqZpmr.png)
+
+![https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png](https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png)
+
+### Basic environment:
+
+Arch Linux ([https://archlinux.org/](https://archlinux.org/))
+
+Bspwm (directly attach the configuration file [https://github.com/qlAD/.config/tree/main/bspwm](https://github.com/qlAD/.config/tree/main/bspwm))
+
+Ly (official repository [https://github.com/fairyglade/ly](https://github.com/fairyglade/ly))
+
+Nvim (Configuration using TheCW [https://github.com/theniceboy/nvim](https://github.com/theniceboy/nvim))
+
+Virt-manager (Using B station tutorial [https://www.bilibili.com/video/BV1dQ4y1o78R](https://www.bilibili.com/video/BV1dQ4y1o78R?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=0cd38c556b88d8d48ee0aff1818378ea) )
+
+## 1. Install Arch Linux
+
+### 1.1. Reference
+
+[Arch Linux Wiki Installation guide](https://wiki.archlinux.org/title/Installation_guide)
+
+[Super detailed tutorial Arch Linux real machine installation tutorial - from command line to graphical interface | March 2021](https://www.bilibili.com/video/BV1Av411a7xe)
+
+### 1.2. Use Bspwm as window manager
+
+[GitHub - baskerville/bspwm: A tiling window manager based on binary space partitioning](https://github.com/baskerville/bspwm)
+
+• It is _just_ a window manager (WM).
+• It is managed by several easily configurable scripts.
+• It supports gaps between windows by default.
+
+### 1.3. Use sxhkd to set shortcut keys
+
+[GitHub - baskerville/sxhkd: Simple X hotkey daemon](https://github.com/baskerville/sxhkd)
+
+sxhkd is an X daemon that reacts to input events by executing commands.
+
+Its configuration file is a series of bindings that define the association between input events and commands
+
+The format of the configuration file supports a simple notation that maps multiple shortcuts to multiple commands in parallel.
+
+### 1.4. Use Ly as the login manager
+
+[GitHub - fairyglade/ly: display manager with console UI](https://github.com/fairyglade/ly)
+
+Ly - TUI Display Manager
+
+![https://s2.loli.net/2022/07/24/CgLTS7mFrWBzi86.png](https://s2.loli.net/2022/07/24/CgLTS7mFrWBzi86.png)
+
+Arch Linux Installation From [AUR](https://aur.archlinux.org/packages/ly):
+
+`yay -S ly`
+
+## 2. Font installation
+
+Download the font and move it to the .fonts folder, create it if you don't have it
+
+![https://s2.loli.net/2022/07/24/Ubi5SIgDlfnXNhq.png](https://s2.loli.net/2022/07/24/Ubi5SIgDlfnXNhq.png)
+
+(Optional) Install the same fonts as mine
+
+![https://s2.loli.net/2022/07/24/14K3gSbaQe6c8NP.png](https://s2.loli.net/2022/07/24/14K3gSbaQe6c8NP.png)
+
+## 3. Polybar beautification configuration
+
+Slightly modified from the original repository ([https://github.com/the-anonymous-raven/polybar-themes](https://github.com/the-anonymous-raven/polybar-themes))
+
+Before the change (left), after the change (right)
+
+![https://s2.loli.net/2022/07/24/lEy8Hpn5jXTBkKz.png](https://s2.loli.net/2022/07/24/lEy8Hpn5jXTBkKz.png)
+
+![https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png](https://s2.loli.net/2022/07/24/mdgAJjGYTleP2Hs.png)
+
+Which added the cava fluctuating with the sound plug-in script
+
+[polybar-scripts/polybar-scripts/info-cava at master polybar/polybar-scripts](https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/info-cava)
+
+![https://s2.loli.net/2022/07/24/PwYDnZTMhv9bC3H.png](https://s2.loli.net/2022/07/24/PwYDnZTMhv9bC3H.png)
+
+Note that the cava-git application needs to be installed (cava requires kernel support and has some bugs)
+
+![https://s2.loli.net/2022/07/24/fSb6YDavj4ed2Rh.png](https://s2.loli.net/2022/07/24/fSb6YDavj4ed2Rh.png)
+
+## 4. Themes and icons
+
+![https://s2.loli.net/2022/07/24/lfFQVTAy7ecHjg9.png](https://s2.loli.net/2022/07/24/lfFQVTAy7ecHjg9.png)
+
+### 4.1. System theme: Nordic-darker ([https://github.com/EliverLara/Nordic](https://github.com/EliverLara/Nordic))
+
+### 4.2. System icon: Papirus-Dark ([https://github.com/PapirusDevelopmentTeam/papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme))
+
+Use the lxappearance program to switch themes and icons
+
+![https://s2.loli.net/2022/07/24/bOEKUscrM1oRgp5.png](https://s2.loli.net/2022/07/24/bOEKUscrM1oRgp5.png)
+
+### 4.3. Wallpaper (set with FEH)
+
+![https://s2.loli.net/2022/07/24/BCRVnLIHq5bXd6x.png](https://s2.loli.net/2022/07/24/BCRVnLIHq5bXd6x.png)
+
+[GitHub - derf/feh: a fast and light image viewer](https://github.com/derf/feh)
+
+feh is a lightweight, configurable and versatile image viewer. It is aimed at command line users, but can also be launched from a graphical file manager. In addition to viewing images, it can compile text and thumbnail lists, display (un)loadable files, set X11 backgrounds, and more.
+
+Nord themed wallpapers can be found on Github
+
+[GitHub - linuxdotexe/nordic-wallpapers: A collection of wallpapers that go well with the rices inspired by the Nord Colorscheme. Made with ImageGoNord by Schrödinger Hat.](https://github.com/linuxdotexe/nordic-wallpapers)
+
+### 4.4, Grub theme
+
+![https://s2.loli.net/2022/07/24/fWxZyo4GzBlmgKQ.png](https://s2.loli.net/2022/07/24/fWxZyo4GzBlmgKQ.png)
+
+[GitHub - VandalByte/dedsec-grub2-theme: DedSec GRUB2 Theme 💀🖤](https://github.com/VandalByte/dedsec-grub2-theme)
+
+From Github (a handy Grub setup program)
+
+I chose this one
+
+![https://s2.loli.net/2022/07/24/TiCUvBpGMQR27Vm.png](https://s2.loli.net/2022/07/24/TiCUvBpGMQR27Vm.png)
+
+## 5. Tools and Software
+
+Network proxy tool **[clash_for_windows_pkg](https://github.com/Fndroid/clash_for_windows_pkg) (yay can directly install the Chinese version)**
+
+![https://s2.loli.net/2022/07/24/dFeIVRBZuiMajG8.png](https://s2.loli.net/2022/07/24/dFeIVRBZuiMajG8.png)
+
+Network Music Software [**Electron Netease Cloud Music**](https://github.com/Rocket1184/electron-netease-cloud-music)
+
+Browser Firefox + Google-Chrome-Dev
+
+File Manager Ranger + Dolphin
+
+Terminal Alacritty + kitty + fish
+
+Communication Telegram-Desktop
+
+Games Steam + Minecraft
+
+Office LibreOffice + Vscode + Nvim
+
+## Continuously updated. . .
